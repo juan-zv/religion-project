@@ -1,6 +1,22 @@
+:root {
+    --primary-color: #ffffffde;
+    --secondary-color: #121212;
+    --tertiary-color: #333;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f4f9;
+    background-color: var(--primary-color);
     color: #333;
     line-height: 1.6;
     margin: 0;
@@ -8,7 +24,7 @@ body {
 }
 
 header {
-    background-color: #00457c;
+    background-color: var(--tertiary-color);
     color: white;
     padding: 2rem 1rem;
     text-align: center;
@@ -21,7 +37,7 @@ header {
 }
 
 h2 {
-    color: #00457c;
+    color: black;
     margin-top: 2rem;
 }
 
@@ -29,14 +45,54 @@ h2 {
     background-color: #fff;
     margin: 1rem 0;
     padding: 1rem;
-    border-left: 5px solid #00457c;
+    border-left: 5px solid var(--tertiary-color);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 footer {
-    background-color: #00457c;
+    background-color: var(--tertiary-color);
     color: white;
     text-align: center;
     padding: 1rem;
     margin-top: 2rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    header, footer {
+        padding: 1rem;
+    }
+    .container {
+        padding: 0.5rem;
+    }
+    .event {
+        padding: 0.5rem;
+    }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: #121212;
+        --secondary-color: #ffffffde;
+        --tertiary-color: #333;
+    }
+
+    body {
+        background-color: var(--primary-color);
+        color: var(--secondary-color);
+    }
+
+    header, footer {
+        background-color: var(--tertiary-color);
+    }
+
+    h2 {
+        color: var(--secondary-color);
+    }
+
+    .event {
+        background-color: var(--secondary-color);
+        color: var(--primary-color);
+    }
 }
